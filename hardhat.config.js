@@ -10,14 +10,17 @@ module.exports = {
     solidity: {
         version: "0.8.17",
         settings: {
-          optimizer: {
-            enabled: true,
-            runs: 1000,
-            details: { yul: false },
-          },
+            optimizer: {
+                enabled: true,
+                runs: 1000,
+                details: { yul: false },
+            },
         },
-      },
-    defaultNetwork: "Hyperspace",
+    },
+    // defaultNetwork: "Hyperspace",
+    // defaultNetwork: "FilecoinMainnet",
+    defaultNetwork: "Calibrationnet",
+
     networks: {
         Hyperspace: {
             chainId: 3141,
@@ -27,6 +30,11 @@ module.exports = {
         FilecoinMainnet: {
             chainId: 314,
             url: "https://api.node.glif.io",
+            accounts: [PRIVATE_KEY],
+        },
+        Calibrationnet: {
+            chainId: 314159,
+            url: "https://filecoin-calibration.chainup.net/rpc/v1",
             accounts: [PRIVATE_KEY],
         },
     },
